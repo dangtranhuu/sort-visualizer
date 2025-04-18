@@ -45,13 +45,39 @@ button {
 }
 
 .column {
-  width: 30px;
+  width: 40px;
   background: #00c897;
   text-align: center;
   color: #000;
   border-radius: 4px 4px 0 0;
   font-size: 12px;
+  transition: transform 0.3s ease, border 0.3s ease;
 }
+
+.column {
+  transition: transform 0.5s ease;
+}
+
+.pointer {
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 14px;
+  font-weight: bold;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.pointer-i {
+  color: #ffe100;
+}
+
+.pointer-j {
+  color: #00f2ff;
+}
+
+
 
 .code-view {
   background: #2e2e2e;

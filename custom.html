@@ -16,13 +16,10 @@
       for (let i = 0; i < arr.length - 1; i++) {
         for (let j = i + 1; j < arr.length; j++) {
           if (arr[j] < arr[i]) {
-            let temp = arr[i];
-            arr[i] = arr[j];
-            arr[j] = temp;
+            swap(i, j);
           }
         }
       }
-      
     </textarea>
 
     <button id="runBtn">Chạy mô phỏng</button>
@@ -33,6 +30,9 @@
       <div id="finalResult" class="result-line"></div>
     </div>
   </div>
+  <label>Tốc độ: <input type="range" id="speedSlider" min="100" max="2000" step="100" value="800"> <span
+      id="speedValue">800</span> ms</label>
+
 
   <script src="./assets/js/custom.js"></script>
 </body>
