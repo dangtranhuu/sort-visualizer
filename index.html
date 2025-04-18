@@ -2,84 +2,48 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./assets/css/main.css">
-  <script src="./assets/js/genArr.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./assets/css/main.css" />
+  <script src="./assets/js/genArr.js" defer></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <title>Simulation Sort</title>
 </head>
 
 <body>
-  <div id="sort">Hello</div>
-  <div class="wrapper">
-    <div class="container" id="columns">
-      <!-- <div class="column column1 " id="col1" style="height: 150px;">
-        <p class="value">15</p>
+  <div class="menu">
+    <div class="bottom-nav-wrapper">
+      <div class="bottom-nav" id="bottomNav">
+        <!-- 🟢 Sắp xếp -->
+        <div class="nav-item">
+          <a href="#" id="sort" title="Sắp xếp">
+            <i class="fa-solid fa-arrow-down-a-z"></i>
+          </a>
+        </div>
+
+        <!-- ⏸️ / ▶️ Tạm dừng / Tiếp tục -->
+        <div class="nav-item">
+          <a href="#" id="pause-resume" title="Tạm dừng">
+            <i id="pauseIcon" class="fa-solid fa-pause"></i>
+          </a>
+        </div>
       </div>
-      <div class="column column2" id="col2" style="height: 200px;">
-        <p class="value">20</p>
-      </div>
-      <div class="column column3" id="col3" style="height: 250px;">
-        <p class="value">25</p>
-      </div>
-      <div class="column column4" id="col4" style="height: 300px;">
-        <p class="value">30</p>
-      </div>
-      <div class="column column5" id="col5" style="height: 180px;">
-        <p class="value">18</p>
-      </div>
-      <div class="column column6" id="col6" style="height: 220px;">
-        <p class="value">22</p>
-      </div>
-      <div class="column column1" id="col7" style="height: 300px;">
-        <p class="value">30</p>
-      </div>
-      <div class="column column2" id="col8" style="height: 180px;">
-        <p class="value">18</p>
-      </div>
-      <div class="column column3" id="col9" style="height: 220px;">
-        <p class="value">22</p>
-      </div> -->
-    </div>
-    <div class="index" id="indexs">
-      <!-- <div class="index-item id1">1</div>
-      <div class="index-item id2">2</div>
-      <div class="index-item id3">3</div>
-      <div class="index-item id4">4</div>
-      <div class="index-item id5">5</div>
-      <div class="index-item id6">6</div>
-      <div class="index-item id7">7</div>
-      <div class="index-item id8">8</div>
-      <div class="index-item id9">9</div> -->
-    </div>
-    <div class="letters" id="letters">
-      <!-- <div class="letter-item">i</div>
-      <div class="letter-item"></div>
-      <div class="letter-item"></div>
-      <div class="letter-item"></div>
-      <div class="letter-item"></div>
-      <div class="letter-item"></div>
-      <div class="letter-item"></div>
-      <div class="letter-item"></div>
-      <div class="letter-item"></div> -->
-    </div>
-    <div class="numerals" id="numerals">
-      <div class="numerals-item"></div>
-      <div class="numerals-item">j</div>
-      <div class="numerals-item"></div>
-      <div class="numerals-item"></div>
-      <div class="numerals-item"></div>
-      <div class="numerals-item"></div>
-      <div class="numerals-item"></div>
-      <div class="numerals-item"></div>
-      <div class="numerals-item"></div>
     </div>
   </div>
 
-  <script src="./assets/js/main.js"></script>
+  <div class="wrapper">
+    <div class="i-line" id="iLine"></div>
+    <div class="container" id="columns"></div>
+    <div class="j-line" id="jLine"></div>
+    <div class="index" id="indexs"></div>
+  </div>
+
   <script>
-    genMaps(15);
+    document.addEventListener('DOMContentLoaded', () => {
+      genMaps(15);
+    });
   </script>
+
 </body>
 
 </html>

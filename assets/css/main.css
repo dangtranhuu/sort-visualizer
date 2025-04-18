@@ -40,17 +40,14 @@ body {
 .wrapper {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
 }
 
 .container {
   display: flex;
   align-items: flex-end;
-  gap: 0;
-  /* Để các cột nằm liền kề nhau */
-  margin-bottom: 10px;
-  /* Tạo khoảng cách cho các chỉ mục */
+  gap: 5px;
+  margin: 10px 0;
 }
 
 .column {
@@ -61,115 +58,128 @@ body {
   justify-content: center;
   align-items: flex-end;
   border-radius: 5px 5px 0 0;
-  /* Chỉ bo góc trên */
   padding: 10px;
-  margin: 0 2.5px;
-  /* Khoảng cách giữa các cột */
-  transition: swap 0.5s ease 0.5s ease;
+  transition: swap 0.5s ease;
   cursor: pointer;
+  position: relative;
 }
 
-/* Cột 1 */
-.column1 {
-  background-color: var(--color1-bg);
-  border: 2px solid var(--color1-border);
-}
-
-/* Cột 2 */
-.column2 {
-  background-color: var(--color2-bg);
-  border: 2px solid var(--color2-border);
-}
-
-/* Cột 3 */
-.column3 {
-  background-color: var(--color3-bg);
-  border: 2px solid var(--color3-border);
-}
-
-/* Cột 4 */
-.column4 {
-  background-color: var(--color4-bg);
-  border: 2px solid var(--color4-border);
-}
-
-/* Cột 5 */
-.column5 {
-  background-color: var(--color5-bg);
-  border: 2px solid var(--color5-border);
-}
-
-/* Cột 6 */
-.column6 {
-  background-color: var(--color6-bg);
-  border: 2px solid var(--color6-border);
-}
-
-/* Cột 7 */
-.column7 {
-  background-color: var(--color7-bg);
-  border: 2px solid var(--color7-border);
-}
-
-/* Cột 8 */
-.column8 {
-  background-color: var(--color8-bg);
-  border: 2px solid var(--color8-border);
-}
-
-/* Cột 9 */
-.column9 {
-  background-color: var(--color9-bg);
-  border: 2px solid var(--color9-border);
-}
-
-/* Cột 0 */
 .column0 {
   background-color: var(--color0-bg);
   border: 2px solid var(--color0-border);
 }
 
-.index,
-.letters,
-.numerals {
-  display: flex;
-  justify-content: space-between;
-  /* width: calc(6 * 55px + 10px); */
-  /* Tính toán chiều rộng của container chỉ mục */
+.column1 {
+  background-color: var(--color1-bg);
+  border: 2px solid var(--color1-border);
 }
 
-.index-item,
-.letter-item,
-.numerals-item {
+.column2 {
+  background-color: var(--color2-bg);
+  border: 2px solid var(--color2-border);
+}
+
+.column3 {
+  background-color: var(--color3-bg);
+  border: 2px solid var(--color3-border);
+}
+
+.column4 {
+  background-color: var(--color4-bg);
+  border: 2px solid var(--color4-border);
+}
+
+.column5 {
+  background-color: var(--color5-bg);
+  border: 2px solid var(--color5-border);
+}
+
+.column6 {
+  background-color: var(--color6-bg);
+  border: 2px solid var(--color6-border);
+}
+
+.column7 {
+  background-color: var(--color7-bg);
+  border: 2px solid var(--color7-border);
+}
+
+.column8 {
+  background-color: var(--color8-bg);
+  border: 2px solid var(--color8-border);
+}
+
+.column9 {
+  background-color: var(--color9-bg);
+  border: 2px solid var(--color9-border);
+}
+
+.index {
+  display: flex;
+  gap: 5px;
+  margin-top: 5px;
+}
+
+.index-item {
   width: 50px;
   text-align: center;
   color: #00f2ff;
   font-weight: bold;
-  position: relative;
-  top: 20px;
-  padding: 10px;
-  margin: 0 2.5px;
-  /* Điều chỉnh vị trí chỉ mục để nằm ngay dưới các cột */
 }
 
-.letter-item,
-.numerals-item {
+.i-line,
+.j-line {
+  display: flex;
+  gap: 5px;
+  height: 20px;
+}
+
+.i-marker,
+.j-marker {
+  width: 50px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 14px;
   color: #ffe100;
 }
 
-.letters {
-  margin-top: 10px;
-  /* Khoảng cách giữa chỉ mục và dãy chữ cái */
+.j-marker {
+  color: #00f2ff;
 }
 
-.numerals {
-  margin-top: 10px;
-  /* Khoảng cách giữa chỉ mục và dãy chữ cái */
+.bottom-nav-wrapper {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 90%;
+  padding: 0 12px;
+  z-index: 9999;
 }
 
+.bottom-nav {
+  display: inline-flex;
+  gap: 10px;
+  background: #fff;
+  padding: 10px 16px;
+  border-radius: 16px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+  border: solid 0.5px rgb(228, 228, 228);
+  justify-content: center;
+}
 
-
-/* JS */
-.chose {
-  color: red
+.nav-item a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 11px;
+  font-size: 15px;
+  background: #f5f5f5;
+  color: #9a9a9a;
+  text-decoration: none;
+  transition: transform 0.2s ease;
+  position: relative;
+  z-index: 1;
 }
