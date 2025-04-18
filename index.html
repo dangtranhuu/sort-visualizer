@@ -31,12 +31,35 @@
     </div>
   </div>
 
-  <div class="wrapper">
-    <div class="i-line" id="iLine"></div>
-    <div class="container" id="columns"></div>
-    <div class="j-line" id="jLine"></div>
-    <div class="index" id="indexs"></div>
+  <div class="visualizer">
+    <!-- left: biểu đồ -->
+    <div class="chart-wrapper">
+      <div class="i-line" id="iLine"></div>
+      <div class="container" id="columns"></div>
+      <div class="j-line" id="jLine"></div>
+      <div class="index" id="indexs"></div>
+    </div>
+
+    <!-- right: code -->
+    <div class="code-wrapper">
+      <pre class="code-view" id="codeView">
+        <code>
+          <span id="line1">for (let i = 0; i &lt; n - 1; i++) {</span>
+          <span id="line2">  for (let j = i + 1; j &lt; n; j++) {</span>
+          <!-- <span id="line3">    updatePointers(i, j);</span> -->
+          <span id="line4">    if (arr[j] &lt; arr[i]) {</span>
+          <span id="line5">      swapColumns(colI, colJ);</span>
+          <span id="line6">      let temp = arr[i]; arr[i] = arr[j]; arr[j] = temp;</span>
+          <span id="line7">    }</span>
+          <span id="line8">  }</span>
+          <span id="line9">}</span>
+        </code>
+      </pre>
+
+    </div>
   </div>
+
+
 
   <script>
     document.addEventListener('DOMContentLoaded', () => {

@@ -37,6 +37,25 @@ body {
   position: relative;
 }
 
+.visualizer {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 50px;
+  margin-top: 40px;
+}
+
+.chart-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.code-wrapper {
+  max-height: 400px;
+}
+
+
 .wrapper {
   display: flex;
   flex-direction: column;
@@ -134,6 +153,15 @@ body {
   height: 20px;
 }
 
+.i-line,
+.j-line {
+  display: flex;
+  gap: 5px;
+  height: 20px;
+  margin: 2px 0;
+  justify-content: center;
+}
+
 .i-marker,
 .j-marker {
   width: 50px;
@@ -141,11 +169,13 @@ body {
   font-weight: bold;
   font-size: 14px;
   color: #ffe100;
+  line-height: 20px;
 }
 
 .j-marker {
   color: #00f2ff;
 }
+
 
 .bottom-nav-wrapper {
   position: fixed;
@@ -182,4 +212,43 @@ body {
   transition: transform 0.2s ease;
   position: relative;
   z-index: 1;
+}
+
+/* CODE */
+
+
+.code-view {
+  background: #1e1e1e;
+  color: #d4d4d4;
+  padding: 20px;
+  margin-top: 30px;
+  width: 550px;
+  border-radius: 8px;
+  font-family: Consolas, monospace;
+  font-size: 14px;
+  line-height: 1;
+  max-height: 550px;
+  overflow-y: auto;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  white-space: pre;
+  tab-size: 2;
+
+}
+
+.code-view .highlight {
+  background: rgba(255, 255, 100, 0.1);
+  color: #ffffff;
+  border-left: 3px solid #ffe100;
+}
+
+
+.code-view span {
+  display: block;
+  padding-left: 10px;
+  transition: background 0.3s ease;
+}
+
+.code-view .highlight {
+  background: rgba(255, 255, 0, 0.2);
+  color: #fff;
 }

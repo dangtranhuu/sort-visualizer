@@ -92,12 +92,19 @@ async function swapColumns(col1, col2) {
 document.addEventListener("DOMContentLoaded", () => {
   const simulation = async (arr) => {
     for (let i = 0; i < arr.length - 1; i++) {
+      highlightLine(1);
+      await delay(200);
+
       for (let j = i + 1; j < arr.length; j++) {
+        highlightLine(2);
+        await delay(200);
+
         updatePointers(i, j);
+        highlightLine(2);
+        await delay(200);
 
         const colI = document.getElementById(`col${i}`);
         const colJ = document.getElementById(`col${j}`);
-
         colI.style.border = "2px solid red";
         colJ.style.border = "2px solid red";
 
@@ -105,23 +112,34 @@ document.addEventListener("DOMContentLoaded", () => {
         await delay(400);
 
         if (arr[j] < arr[i]) {
+          highlightLine(4);
+          await delay(200);
+
           colI.style.border = "2px solid green";
           colJ.style.border = "2px solid green";
 
+          highlightLine(5);
           await swapColumns(colI, colJ);
+          await delay(500);
 
-          const temp = arr[i];
+          highlightLine(6);
+          let temp = arr[i];
           arr[i] = arr[j];
           arr[j] = temp;
-
-          await delay(500);
+          await delay(200);
         }
 
+        highlightLine(7);
         colI.style.border = "";
         colJ.style.border = "";
       }
+
+      highlightLine(8);
     }
+
+    highlightLine(9);
   };
+
 
   document.getElementById("sort").addEventListener("click", () => simulation(arrRoot));
   document.getElementById("pause-resume").addEventListener("click", () => {
@@ -131,3 +149,11 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("pause-resume").title = isPaused ? "Tiếp tục" : "Tạm dừng";
   });
 });
+
+
+function highlightLine(lineNumber) {
+  const lines = document.querySelectorAll('#codeView span');
+  lines.forEach(line => line.classList.remove('highlight'));
+  const current = document.getElementById(`line${lineNumber}`);
+  if (current) current.classList.add('highlight');
+}
