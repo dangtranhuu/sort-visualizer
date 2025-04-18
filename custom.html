@@ -29,9 +29,18 @@
       <pre id="codeView" class="code-view"></pre>
       <div id="finalResult" class="result-line"></div>
     </div>
+
+
+    <div class="array-control">
+      <label>Array Length:
+        <input type="number" id="arrayLength" min="2" max="50" value="5" />
+      </label>
+      <button id="generateBtn">Tạo mảng</button>
+    </div>
+
+    <label>Tốc độ: <input type="range" id="speedSlider" min="100" max="2000" step="100" value="800"> <span
+        id="speedValue">800</span> ms</label>
   </div>
-  <label>Tốc độ: <input type="range" id="speedSlider" min="100" max="2000" step="100" value="800"> <span
-      id="speedValue">800</span> ms</label>
 
 
   <script src="./assets/js/custom.js"></script>

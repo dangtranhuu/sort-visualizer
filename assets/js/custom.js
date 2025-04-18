@@ -1,5 +1,23 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const originalArr = [15, 5, 8, 20, 10];
+  let originalArr = [15, 5, 8, 20, 10]; // ← Sẽ bị cập nhật
+
+  function generateRandomArray(length, min = 5, max = 30) {
+    return Array.from({ length }, () => Math.floor(Math.random() * (max - min + 1)) + min);
+  }
+
+  document.getElementById('generateBtn').addEventListener('click', () => {
+    const len = parseInt(document.getElementById('arrayLength').value);
+    if (isNaN(len) || len < 2) {
+      alert("Độ dài mảng phải >= 2");
+      return;
+    }
+
+    originalArr = generateRandomArray(len);
+    renderColumns([...originalArr]);
+    document.getElementById('finalResult').innerText = '🌀 Mảng đã được tạo';
+    console.log("🔢 Mảng mới:", originalArr);
+  });
+
   let logs = [];
 
   function renderColumns(array, pointerI = null, pointerJ = null) {
