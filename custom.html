@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Custom Sort Simulator</title>
+  <link rel="stylesheet" href="./assets/css/custom.css" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <h1>Custom Sort Visualizer</h1>
+
+    <textarea id="userCode" rows="10" placeholder="// Viết code sắp xếp thuần (không cần delay, highlight, swap...)">
+      for (let i = 0; i < arr.length - 1; i++) {
+        for (let j = i + 1; j < arr.length; j++) {
+          if (arr[j] < arr[i]) {
+            let temp = arr[i];
+            arr[i] = arr[j];
+            arr[j] = temp;
+          }
+        }
+      }
+      
+    </textarea>
+
+    <button id="runBtn">Chạy mô phỏng</button>
+
+    <div class="visual-area">
+      <div id="columns" class="columns"></div>
+      <pre id="codeView" class="code-view"></pre>
+      <div id="finalResult" class="result-line"></div>
+    </div>
+  </div>
+
+  <script src="./assets/js/custom.js"></script>
+</body>
+
+</html>
